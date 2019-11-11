@@ -20,12 +20,13 @@ public class Lesson4_FlowControl {
      */
     public static String task1(String[] strings) {
         if ( strings.length != 0) {
-            byte max = 0;
+            String smax = strings[0];
             for (byte i = 1; i < strings.length; i++){
-                if ( strings[max].length() < strings[i].length())
-                    max = i;
+                if ( smax.length() < strings[i].length()) {
+                    smax = strings[i];
+                }
             }
-            return strings[max];
+            return smax;
         } else
             return "";
     }
@@ -50,7 +51,12 @@ public class Lesson4_FlowControl {
      * @return целочисленный результат выполнения операции
      */
     public static int task2(int i, int k, char operation) {
-        switch (operation){
+        return (operation == '+' ? i + k :
+                operation == '-' ? i - k :
+                operation == '*' ? i * k :
+                        operation == '/' && k != 0 ? i / k :
+                                operation == '%' && k != 0 ? i % k : 0);
+       /* switch (operation){
             case ('+') :
                 return ( i + k);
             case ('-') :
@@ -69,6 +75,6 @@ public class Lesson4_FlowControl {
                     return 0;
             default:
                 return 0;
-        }
+        }*/
     }
 }

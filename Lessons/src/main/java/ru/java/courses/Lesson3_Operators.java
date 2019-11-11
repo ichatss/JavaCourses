@@ -18,20 +18,12 @@ public class Lesson3_Operators {
      * - получить первые n символов из строки можно методом .substring(0, n)
      */
     public static String task1(int i, String str) {
-        if ( i > 0 ){
-            str += i;
-        } else if (i < 0 ){
-            str = i + str;
-        } else {
-            str = "0";
-        }
+        str = i == 0 ? "0" : i > 0 ? str + i : i + str;
 
         if ( str.length() <= 10 )
             return str;
         else
             return str.substring(0, 10);
-        // свой код нужно писать тут
-        // следующую строку можно удалять
     }
 
     /**
@@ -54,12 +46,7 @@ public class Lesson3_Operators {
         } else if( i > 0 && i % 2 == 0 ){
             i -= 1000;
         }
-        if ( i < 0 )
-            return false;
-        else
-            return true;
-        // свой код нужно писать тут
-        // следующую строку можно удалять
+        return ( i > 0 );
     }
 
 
